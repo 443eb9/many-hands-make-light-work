@@ -1,0 +1,147 @@
+body::before {
+    background-image: url(../../assets/images/backgrounds/1.jpg);
+}
+
+.tools {
+    position: fixed;
+    right: 50%;
+    width: 280px;
+    padding: 15px;
+    margin-top: 100px;
+    margin-right: -900px;
+}
+
+.tools .search #search-text {
+    width: calc(100% - 55px);
+    height: 40px;
+    padding-left: 5px;
+    cursor: text;
+    font: normal 400 20px/40px "Source Han Sans CN";
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.tools .search #submit {
+    position: absolute;
+    margin-left: 15px;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.tools .search .submit:active {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.tools .filter {
+    font: normal 400 20px/30px "Source Han Sans CN";
+    margin-top: 10px;
+}
+
+.filter h3 {
+    margin-bottom: 10px;
+}
+
+.filter .province {
+    margin-top: 10px;
+}
+
+.filter .province #all-province {
+    width: calc(100% - 55px);
+    height: 40px;
+    padding-left: 5px;
+    font: normal 400 20px/40px "Source Han Sans CN";
+}
+
+.filter .province #exclude-confirm {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    margin-left: 15px;
+    font-size: 35px;
+}
+
+.filter .province .exluded-prov {
+    height: 40px;
+    margin: 5px 0;
+    padding-left: 5px;
+    line-height: 40px;
+}
+
+.filter .province .prov-name {
+    float: left;
+    font-weight: 400;
+    text-indent: 1;
+}
+
+.filter .province .cancel {
+    float: right;
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.filter .method input[type=checkbox] {
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.filter .method label {
+    float: left;
+    font-size: 20px;
+    line-height: 20px;
+    margin-right: 5px;
+}
+
+#apply-filter {
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    font: normal 400 30px/50px "Source Han Sans CN";
+}
+
+.post {
+    overflow: hidden;
+    height: 250px;
+    padding: 15px;
+    margin: 20px 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 7px;
+}
+
+.post .info {
+    height: 80px;
+    border-bottom: 2px dashed white;
+}
+
+.post .post-info {
+    float: right;
+    margin-top: 10px;
+    text-align: right;
+}
+
+.post .post-info .post-time {
+    font: normal 400 25px/25px "Bender";
+}
+
+.post .user-info .basic-info {
+    float: left;
+    padding: 10px 20px;
+}
+
+.post .user-info .avatar {
+    float: left;
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+}
+
+.post .preview {
+    display: block;
+    padding: 20px 20px;
+    font: normal 400 20px/30px "Source Han Sans CN";
+}

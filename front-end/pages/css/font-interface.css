@@ -1,0 +1,23 @@
+@font-face {
+    font-family: "STZhongSong";
+    src: url("../../assets/fonts/STZhongSong/STZhongSong.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Source Han Sans CN";
+    src: url("../../assets/fonts/SourceHanSans/SourceHanSansCN-Normal.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Bender";
+    src: url("../../assets/fonts/Bender/Jovanny\ Lemonad\ -\ Bender.otf") format("opentype");
+}
+
+/* 在线链接服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+@font-face {
+    font-family: 'iconfont';
+    /* Project id 4203665 */
+    src: url('//at.alicdn.com/t/c/font_4203665_youmn7cfuc.woff2?t=1691579342563') format('woff2'),
+        url('//at.alicdn.com/t/c/font_4203665_youmn7cfuc.woff?t=1691579342563') format('woff'),
+        url('//at.alicdn.com/t/c/font_4203665_youmn7cfuc.ttf?t=1691579342563') format('truetype');
+}

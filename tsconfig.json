@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "lib": [
+            "DOM",
+            "ES2022"
+        ],
+        "moduleResolution": "node",
+        "baseUrl": ".",
+        "paths": {
+            "@microsoft/signalr": [
+                "/node_modules/@microsoft/signalr/dist/browser/esm/index"
+            ]
+        },
+        "watch": true,
+        "resolveJsonModule": true,
+        "module": "ES2022",
+        "target": "ES2022"
+    }
+}

@@ -1,0 +1,145 @@
+body::before {
+    background-image: url(../../assets/images/backgrounds/4.jpg);
+}
+
+.chat-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1200px;
+    height: 800px;
+    margin-left: -600px;
+    margin-top: -400px;
+}
+
+.info {
+    width: 100%;
+    padding: 20px;
+    height: 100px;
+    border-bottom: 1px solid white;
+}
+
+.info .hint {
+    font: normal 400 20px/25px "Source Han Sans CN";
+}
+
+.info .session-id {
+    float: left;
+    font: normal 400 25px/30px "Bender";
+}
+
+.info #copy-session-id i {
+    font-size: 30px;
+    margin-left: 20px;
+}
+
+.chat {
+    overflow-y: scroll;
+    height: 500px;
+    padding: 0 20px;
+    border-bottom: 1px solid white;
+}
+
+.chat::-webkit-scrollbar,
+#msg-edit-field::-webkit-scrollbar {
+    width: 25px;
+}
+
+.chat::-webkit-scrollbar-track,
+#msg-edit-field::-webkit-scrollbar-track {
+    background-color: #101010;
+}
+
+.chat::-webkit-scrollbar-thumb,
+#msg-edit-field::-webkit-scrollbar-thumb {
+    background: #4e4e4e;
+}
+
+.chat-box {
+    width: 60%;
+    margin: 20px;
+}
+
+.chat-box * {
+    display: inline-block;
+}
+
+.chat .other {
+    float: left;
+}
+
+.chat .self {
+    float: right;
+}
+
+.chat .other .user-info {
+    float: left;
+}
+
+.chat .self .user-info {
+    float: right;
+}
+
+.chat .avatar {
+    width: 50px;
+    height: 50px;
+    margin-left: -10px;
+    border-radius: 5px;
+}
+
+.chat .other .avatar {
+    float: left;
+    margin-right: 20px;
+}
+
+.chat .self .avatar {
+    float: right;
+    margin-left: 20px;
+}
+
+.chat .user-info {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.chat .username {
+    display: block;
+    font: normal 400 20px/25px "Source Han Sans CN";
+}
+
+.chat .self .username {
+    text-align: right;
+}
+
+.chat .send-time {
+    font: normal 400 20px/25px "Bender";
+}
+
+.chat .message {
+    margin-top: 10px;
+    padding: 10px;
+    font: normal 400 20px/25px "Source Han Sans CN";
+}
+
+.chat .message img {
+    width: 100%;
+}
+
+.input-msg .tool-bar {
+    height: 40px;
+}
+
+.input-msg #msg-edit-field {
+    width: 100%;
+    height: 160px;
+    padding: 0 10px;
+    resize: none;
+    cursor: text;
+    font: normal 400 20px/25px "Source Han Sans CN";
+    background-color: transparent;
+}
+
+.input-msg .tool-bar * {
+    margin: 5px 0 0 5px;
+    font-size: 30px;
+}
