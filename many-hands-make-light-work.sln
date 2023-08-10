@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MHMLW-Backend", "MHMLW-Backend\MHMLW-Backend.csproj", "{28008F52-6705-48D5-8769-6BF4D8EAD780}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MHMLW-Common", "MHMLW-Common\MHMLW-Common.csproj", "{9E1A9D6C-3A98-4DFD-BE10-BA297C19BDA3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28008F52-6705-48D5-8769-6BF4D8EAD780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28008F52-6705-48D5-8769-6BF4D8EAD780}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28008F52-6705-48D5-8769-6BF4D8EAD780}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28008F52-6705-48D5-8769-6BF4D8EAD780}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E1A9D6C-3A98-4DFD-BE10-BA297C19BDA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E1A9D6C-3A98-4DFD-BE10-BA297C19BDA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E1A9D6C-3A98-4DFD-BE10-BA297C19BDA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E1A9D6C-3A98-4DFD-BE10-BA297C19BDA3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

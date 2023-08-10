@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "8/Q6VBEmV6hORDmp9q/umcajJlWilx4cpH67c0PcWibQsI4y0Y2imnun7vz8IsKudoeMTjS665rT8Oee2Kkscw==",
+  "success": true,
+  "projectFilePath": "F:\\many-hands-make-light-work\\MHMLW-Backend\\MHMLW-Backend.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.0\\microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\mysqlconnector\\2.3.0-beta.3\\mysqlconnector.2.3.0-beta.3.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

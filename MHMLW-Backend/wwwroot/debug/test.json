@@ -1,0 +1,9 @@
+{
+    "excludedProvince": [
+        "+ PROVINCE_EXCLUDED_STR +"
+    ],
+    "expectedMethod": [
+        " + EXPECTED_METHOD_STR + "
+    ],
+    "abc":"def",
+}

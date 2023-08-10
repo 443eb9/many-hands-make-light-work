@@ -1,2 +1,11 @@
-# many-hands-make-light-work
+# Many Hands Make Light Work
 众人拾柴火焰高，愿各位都能维权成功
+
+
+
+错误代码参考：
+
+|错误代码|详细信息|
+|--|--|
+| 100  | 数据库数据匹配失败 |
+

@@ -1,0 +1,12 @@
+F:\many-hands-make-light-work\back-end\MHMLW-Common\bin\Debug\net6.0\MHMLW-Common.deps.json
+F:\many-hands-make-light-work\back-end\MHMLW-Common\bin\Debug\net6.0\MHMLW-Common.dll
+F:\many-hands-make-light-work\back-end\MHMLW-Common\bin\Debug\net6.0\MHMLW-Common.pdb
+F:\many-hands-make-light-work\back-end\MHMLW-Common\obj\Debug\net6.0\MHMLW-Common.csproj.AssemblyReference.cache
+F:\many-hands-make-light-work\back-end\MHMLW-Common\obj\Debug\net6.0\MHMLW-Common.GeneratedMSBuildEditorConfig.editorconfig
+F:\many-hands-make-light-work\back-end\MHMLW-Common\obj\Debug\net6.0\MHMLW-Common.AssemblyInfoInputs.cache
+F:\many-hands-make-light-work\back-end\MHMLW-Common\obj\Debug\net6.0\MHMLW-Common.AssemblyInfo.cs
+F:\many-hands-make-light-work\back-end\MHMLW-Common\obj\Debug\net6.0\MHMLW-Common.csproj.CoreCompileInputs.cache
+F:\many-hands-make-light-work\back-end\MHMLW-Common\obj\Debug\net6.0\MHMLW-Common.dll
+F:\many-hands-make-light-work\back-end\MHMLW-Common\obj\Debug\net6.0\refint\MHMLW-Common.dll
+F:\many-hands-make-light-work\back-end\MHMLW-Common\obj\Debug\net6.0\MHMLW-Common.pdb
+F:\many-hands-make-light-work\back-end\MHMLW-Common\obj\Debug\net6.0\ref\MHMLW-Common.dll
