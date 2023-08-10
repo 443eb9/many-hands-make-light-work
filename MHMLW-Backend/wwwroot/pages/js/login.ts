@@ -57,7 +57,7 @@ function registerButtonEvents() {
                     emailFieldReg.innerText, verifCodeFieldReg.innerText);
                 break;
             case 2:
-                userRetrieve(emailFieldRet.innerText, verifCodeFieldRet.innerText);
+                // userRetrieve(emailFieldRet.innerText, verifCodeFieldRet.innerText);
                 break;
         }
     }

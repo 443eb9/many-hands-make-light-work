@@ -34,11 +34,12 @@ export async function userRegister(username: string, password: string, email: st
     `);
 }
 
-export async function userRetrieve(email: string, verifCode: string) {
+export async function userRetrieve(email: string, verifCode: string, newPassword: string) {
     return await request(Api.User, RequestType.Retrieve, `
     {
         "email":"`+ email + `",
-        "verifCode":"`+ verifCode + `"
+        "verifCode":"`+ verifCode + `",
+        "newPassword":"`+ newPassword + `"
     }
     `);
 }

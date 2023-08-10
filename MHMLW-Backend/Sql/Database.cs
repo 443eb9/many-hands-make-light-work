@@ -1,6 +1,7 @@
-﻿using MHMLW_Backend.Utils;
+﻿using MHMLW_Backend.Models.Requests.User;
+using MHMLW_Backend.Utils;
 using MHMLW_Common;
-using MySqlConnector;
+using MySql.Data.MySqlClient;
 
 namespace MHMLW_Backend.Sql;
 
@@ -40,6 +41,7 @@ public class Database
             for (int i = 0; i < _connections.Length; i++)
             {
                 _connections[i] = new MySqlConnection(Constants.SqlConnectCommand);
+                _connections[i].Open();
             }
         }
 
@@ -48,18 +50,21 @@ public class Database
 
     public string? UserAuth(string username, string password)
     {
-        MySqlCommand cmd = new MySqlCommand("select * from mhmlw.auth where username = @username", Connection);
+        MySqlCommand cmd = new("select * from mhmlw.auth where username = @username", Connection);
         cmd.Parameters.AddWithValue("@username", username);
         MySqlDataReader reader = cmd.ExecuteReader();
 
-        return reader.Read() && reader.GetString("password") == password
+        if (!reader.Read())
+            return null;
+
+        return reader.GetString("password") == password
             ? null
             : reader.GetString("user_id");
     }
 
     public User? GetUser(string userId)
     {
-        MySqlCommand cmd = new MySqlCommand("select * from mhmlw.user where id = @id", Connection);
+        MySqlCommand cmd = new("select * from mhmlw.user where id = @id", Connection);
         cmd.Parameters.AddWithValue("@id", userId);
         MySqlDataReader reader = cmd.ExecuteReader();
 
@@ -76,14 +81,41 @@ public class Database
             : null;
     }
 
-    public bool RegisterUser(string username, string password, string email, int province)
+    public bool RegisterUser(RegisterRequest data)
     {
-        using (MySqlCommand cmd = new MySqlCommand("select username from mhmlw.auth where username = @username", Connection))
+        using (MySqlCommand cmd = new("select email from mhmlw.auth where email = @email", Connection))
+        {
+            cmd.Parameters.AddWithValue("@email", data.email);
             if (cmd.ExecuteReader().Read())
                 return false;
+        }
 
-        using (MySqlCommand cmd = new MySqlCommand("insert into mhmlw.auth set username = @username,password = @password, email = @email", Connection))
+        using (MySqlCommand cmd = new("insert into mhmlw.auth set username = @username,password = @password, email = @email", Connection))
+        {
+            cmd.Parameters.AddWithValue("@username", data.username);
+            cmd.Parameters.AddWithValue("@password", data.password);
+            cmd.Parameters.AddWithValue("@email", data.email);
             cmd.ExecuteNonQuery();
+        }
+
         return true;
+    }
+
+    public bool UpdateUser(string password, string email)
+    {
+        using (MySqlCommand cmd = new("select email from mhmlw.auth where email = @email", Connection))
+        {
+            cmd.Parameters.AddWithValue("@email", email);
+            if (!cmd.ExecuteReader().Read())
+                return false;
+        }
+
+        using (MySqlCommand cmd = new("update mhmlw.auth set password = @password where email = @email", Connection))
+        {
+            cmd.Parameters.AddWithValue("@password", password);
+            cmd.Parameters.AddWithValue("@email", email);
+            cmd.ExecuteNonQuery();
+            return true;
+        }
     }
 }

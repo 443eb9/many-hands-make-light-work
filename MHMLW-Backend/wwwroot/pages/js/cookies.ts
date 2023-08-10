@@ -10,15 +10,21 @@ loadCookies();
 function loadCookies() {
     AUTH_ID = getCookie("AUTH_ID");
     CUR_USER_ID = getCookie("CUR_USER_ID");
+
     PROVINCE_EXCLUDED_STR = getCookie("PROVINCE_EXLUDED");
-    let provs = PROVINCE_EXCLUDED_STR.split(',');
-    for (let i = 0; i < provs.length; ++i) {
-        PROVINCE_EXCLUDED.push(provs[i]);
+    if (PROVINCE_EXCLUDED_STR != null) {
+        let provs = PROVINCE_EXCLUDED_STR.split(',');
+        for (let i = 0; i < provs.length; ++i) {
+            PROVINCE_EXCLUDED.push(provs[i]);
+        }
     }
+
     EXPECTED_METHOD_STR = getCookie("EXPECTED_METHOD_STR");
-    let methods = EXPECTED_METHOD_STR.split(',')
-    for (let i = 0; i < methods.length; ++i) {
-        EXPECTED_METHOD.push(methods[i]);
+    if (EXPECTED_METHOD_STR != null) {
+        let methods = EXPECTED_METHOD_STR.split(',')
+        for (let i = 0; i < methods.length; ++i) {
+            EXPECTED_METHOD.push(methods[i]);
+        }
     }
 }
 

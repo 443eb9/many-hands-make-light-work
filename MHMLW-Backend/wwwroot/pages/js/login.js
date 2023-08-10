@@ -1,4 +1,4 @@
-import { sendVerifCode, userLogin, userRegister, userRetrieve } from "./web-api.js";
+import { sendVerifCode, userLogin, userRegister } from "./web-api.js";
 let currentPage = 0;
 let pageToPanel = [
     document.querySelector(".login-panel"),
@@ -49,7 +49,7 @@ function registerButtonEvents() {
                 userRegister(usernameFieldReg.innerText, passwordFieldReg.innerText, emailFieldReg.innerText, verifCodeFieldReg.innerText);
                 break;
             case 2:
-                userRetrieve(emailFieldRet.innerText, verifCodeFieldRet.innerText);
+                // userRetrieve(emailFieldRet.innerText, verifCodeFieldRet.innerText);
                 break;
         }
     };

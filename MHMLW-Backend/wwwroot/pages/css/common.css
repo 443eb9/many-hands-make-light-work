@@ -36,6 +36,10 @@ html::-webkit-scrollbar-thumb {
     background: #4e4e4e;
 }
 
+button {
+    cursor: pointer;
+}
+
 button * {
     cursor: pointer;
 }

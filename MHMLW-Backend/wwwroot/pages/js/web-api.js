@@ -1,30 +1,27 @@
-import { Api, siteAvatarUrl } from "./constants.js";
+import { Api, RequestType, siteAvatarUrl } from "./constants.js";
 import { EXPECTED_METHOD_STR, PROVINCE_EXCLUDED_STR } from "./cookies.js";
 import { request } from "./request.js";
 export function getUserAvatarUrl(id) {
     return siteAvatarUrl + id + ".jpg";
 }
 export async function getUser(id) {
-    return await request(Api.User, `
+    return await request(Api.User, RequestType.Get, `
     {
-        "requestType":"get",
         "userId":` + id + `
     }
     `);
 }
 export async function userLogin(username, password) {
-    return await request(Api.User, `
+    return await request(Api.User, RequestType.Login, `
     {
-        "requestType":"login",
         "username":"` + username + `",
         "password":"` + password + `"
     }
     `);
 }
 export async function userRegister(username, password, email, verifCode) {
-    return await request(Api.User, `
+    return await request(Api.User, RequestType.Register, `
     {
-        "requestType":"register",
         "username":"` + username + `",
         "password":"` + password + `",
         "email":"` + email + `",
@@ -32,38 +29,36 @@ export async function userRegister(username, password, email, verifCode) {
     }
     `);
 }
-export async function userRetrieve(email, verifCode) {
-    return await request(Api.User, `
+export async function userRetrieve(email, verifCode, newPassword) {
+    return await request(Api.User, RequestType.Retrieve, `
     {
-        "requestType":"retrieve",
         "email":"` + email + `",
-        "verifCode":"` + verifCode + `"
+        "verifCode":"` + verifCode + `",
+        "newPassword":"` + newPassword + `"
     }
     `);
 }
 export async function getNavBar() {
-    return await request(Api.GetNavBar, "");
+    return await request(Api.GetNavBar, RequestType.Get, "");
 }
 export async function getPosts() {
-    return await request(Api.Post, `
-        {
-            "requestType":"get",
-            "isDetailed":false,
-            "excludedProvince":[` + PROVINCE_EXCLUDED_STR + `],
-            "expectedMethod":[` + EXPECTED_METHOD_STR + `]
-        }
-        `);
+    return await request(Api.Post, RequestType.Get, `
+    {
+        "isDetailed":false,
+        "excludedProvince":[` + PROVINCE_EXCLUDED_STR + `],
+        "expectedMethod":[` + EXPECTED_METHOD_STR + `]
+    }
+    `);
 }
 export async function sendVerifCode(linkedEmail) {
-    return await request(Api.ThirdParty, `
+    return await request(Api.ThirdParty, RequestType.Send, `
     {
-        "requestType":"sendVerifCode",
         "email":"` + linkedEmail + `"
     }
     `);
 }
 export async function sendSolidarity(requesterId, receiverId) {
-    return await request(Api.RequestSolidarity, `
+    return await request(Api.RequestSolidarity, RequestType.Send, `
     {
         "requesterId":` + requesterId + `,
         "receiverId":` + receiverId + `,
