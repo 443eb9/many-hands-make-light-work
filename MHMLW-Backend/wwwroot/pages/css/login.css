@@ -28,7 +28,8 @@ body::before {
     font: normal 400 30px/60px "Source Han Sans CN";
 }
 
-.main-container .panel input {
+.main-container .panel input,
+.register-panel .province {
     position: absolute;
     right: 150px;
     width: 200px;
@@ -36,7 +37,10 @@ body::before {
     padding-left: 5px;
     cursor: text;
     font: normal 400 20px/40px "Source Han Sans CN";
-    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.register-panel .province {
+    height: 40px;
 }
 
 .main-container .panel .send-verif-code-reg,

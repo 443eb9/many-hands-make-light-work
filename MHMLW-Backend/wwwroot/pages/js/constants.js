@@ -57,13 +57,15 @@ export var RequestType;
     RequestType[RequestType["Login"] = 2] = "Login";
     RequestType[RequestType["Register"] = 3] = "Register";
     RequestType[RequestType["Retrieve"] = 4] = "Retrieve";
+    RequestType[RequestType["VerificationCode"] = 5] = "VerificationCode";
 })(RequestType || (RequestType = {}));
 export const requestTypeMapper = new Map([
     [RequestType.Get, "get"],
     [RequestType.Send, "send"],
     [RequestType.Login, "login"],
     [RequestType.Register, "register"],
-    [RequestType.Retrieve, "retrieve"]
+    [RequestType.Retrieve, "retrieve"],
+    [RequestType.VerificationCode, "verifCode"]
 ]);
 // export const aesKey = "123456";
 // export const aesIv = new Uint8Array([2, 51, 32, 47, 10, 52, 33]);

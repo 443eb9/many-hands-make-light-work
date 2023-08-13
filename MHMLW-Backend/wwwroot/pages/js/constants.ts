@@ -56,7 +56,8 @@ export enum RequestType {
     Send,
     Login,
     Register,
-    Retrieve
+    Retrieve,
+    VerificationCode
 }
 
 export const requestTypeMapper = new Map([
@@ -64,7 +65,8 @@ export const requestTypeMapper = new Map([
     [RequestType.Send, "send"],
     [RequestType.Login, "login"],
     [RequestType.Register, "register"],
-    [RequestType.Retrieve, "retrieve"]
+    [RequestType.Retrieve, "retrieve"],
+    [RequestType.VerificationCode, "verifCode"]
 ]);
 
 // export const aesKey = "123456";

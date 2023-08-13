@@ -5,7 +5,7 @@ export let PROVINCE_EXCLUDED = [];
 export let EXPECTED_METHOD_STR;
 export let EXPECTED_METHOD = [];
 loadCookies();
-function loadCookies() {
+export function loadCookies() {
     AUTH_ID = getCookie("AUTH_ID");
     CUR_USER_ID = getCookie("CUR_USER_ID");
     PROVINCE_EXCLUDED_STR = getCookie("PROVINCE_EXLUDED");
@@ -23,23 +23,23 @@ function loadCookies() {
         }
     }
 }
-function setCookie(name, value, days) {
+export function setCookie(name, value, days) {
     const expirationDate = new Date();
     expirationDate.setDate(expirationDate.getDate() + days);
     const expires = expirationDate.toUTCString();
     document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/`;
 }
-function getCookie(name) {
+export function getCookie(name) {
     const cookieValue = document.cookie
         .split('; ')
         .find(row => row.startsWith(name))
         ?.split('=')[1];
     return cookieValue ? decodeURIComponent(cookieValue) : null;
 }
-function updateCookie(name, newValue, days) {
+export function updateCookie(name, newValue, days) {
     deleteCookie(name);
     setCookie(name, newValue, days);
 }
-function deleteCookie(name) {
+export function deleteCookie(name) {
     document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
 }

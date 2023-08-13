@@ -1,3 +1,3 @@
-﻿namespace MHMLW_Backend.Models.Sql;
+﻿namespace MHMLW_Backend.Models.Data;
 
-public record User(string id, string name, int level, int province, int helped, int beingHelped);
+public record User(int id, string name, int level, int province, int helped, int beingHelped);

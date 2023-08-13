@@ -642,16 +642,6 @@
         "runtime": {
           "lib/net6.0/ZstdSharp.dll": {}
         }
-      },
-      "MHMLW-Common/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "compile": {
-          "bin/placeholder/MHMLW-Common.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/MHMLW-Common.dll": {}
-        }
       }
     }
   },
@@ -2255,16 +2245,10 @@
         "zstdsharp.port.0.7.1.nupkg.sha512",
         "zstdsharp.port.nuspec"
       ]
-    },
-    "MHMLW-Common/1.0.0": {
-      "type": "project",
-      "path": "../MHMLW-Common/MHMLW-Common.csproj",
-      "msbuildProject": "../MHMLW-Common/MHMLW-Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "MHMLW-Common >= 1.0.0",
       "MySql.Data >= 8.1.0",
       "Newtonsoft.Json >= 13.0.3",
       "Swashbuckle.AspNetCore >= 6.5.0"
@@ -2297,11 +2281,7 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {
-            "F:\\many-hands-make-light-work\\MHMLW-Common\\MHMLW-Common.csproj": {
-              "projectPath": "F:\\many-hands-make-light-work\\MHMLW-Common\\MHMLW-Common.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

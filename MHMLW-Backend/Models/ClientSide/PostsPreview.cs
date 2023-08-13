@@ -1,3 +1,5 @@
-﻿namespace MHMLW_Backend.Models.ClientSide;
+﻿using MHMLW_Backend.Models.Data;
 
-public record PostsPreview();
+namespace MHMLW_Backend.Models.ClientSide;
+
+public record PostPreview(User author, string postTime, string preview);

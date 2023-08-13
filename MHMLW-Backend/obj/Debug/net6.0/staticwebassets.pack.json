@@ -1,0 +1,217 @@
+{
+  "Files": [
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\assets\\fonts\\Bender\\Jovanny Lemonad - Bender.otf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Bender\\Jovanny Lemonad - Bender.otf"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\assets\\fonts\\STZhongSong\\STZhongSong.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\STZhongSong\\STZhongSong.ttf"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\assets\\fonts\\SourceHanSans\\SourceHanSansCN-Normal.otf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\SourceHanSans\\SourceHanSansCN-Normal.otf"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\assets\\images\\avatars\\443eb9#C.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\avatars\\443eb9#C.jpg"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\assets\\images\\backgrounds\\1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\backgrounds\\1.jpg"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\assets\\images\\backgrounds\\2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\backgrounds\\2.jpg"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\assets\\images\\backgrounds\\3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\backgrounds\\3.jpg"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\assets\\images\\backgrounds\\4.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\backgrounds\\4.jpg"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\assets\\images\\icons\\fourm.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\icons\\fourm.jpg"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\assets\\test\\avatar.jpg",
+      "PackagePath": "staticwebassets\\assets\\test\\avatar.jpg"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\assets\\test\\chat.png",
+      "PackagePath": "staticwebassets\\assets\\test\\chat.png"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\debug\\test.json",
+      "PackagePath": "staticwebassets\\debug\\test.json"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\debug\\tool.py",
+      "PackagePath": "staticwebassets\\debug\\tool.py"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\front-end.code-workspace",
+      "PackagePath": "staticwebassets\\front-end.code-workspace"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\chat.html",
+      "PackagePath": "staticwebassets\\pages\\chat.html"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\css\\chat.css",
+      "PackagePath": "staticwebassets\\pages\\css\\chat.css"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\css\\common.css",
+      "PackagePath": "staticwebassets\\pages\\css\\common.css"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\css\\font-interface.css",
+      "PackagePath": "staticwebassets\\pages\\css\\font-interface.css"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\css\\index.css",
+      "PackagePath": "staticwebassets\\pages\\css\\index.css"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\css\\login.css",
+      "PackagePath": "staticwebassets\\pages\\css\\login.css"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\css\\post.css",
+      "PackagePath": "staticwebassets\\pages\\css\\post.css"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\forum.html",
+      "PackagePath": "staticwebassets\\pages\\forum.html"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\chat\\signalr.js",
+      "PackagePath": "staticwebassets\\pages\\js\\chat\\signalr.js"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\chat\\signalr.ts",
+      "PackagePath": "staticwebassets\\pages\\js\\chat\\signalr.ts"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\common.js",
+      "PackagePath": "staticwebassets\\pages\\js\\common.js"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\common.ts",
+      "PackagePath": "staticwebassets\\pages\\js\\common.ts"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\constants.js",
+      "PackagePath": "staticwebassets\\pages\\js\\constants.js"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\constants.ts",
+      "PackagePath": "staticwebassets\\pages\\js\\constants.ts"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\cookies.js",
+      "PackagePath": "staticwebassets\\pages\\js\\cookies.js"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\cookies.ts",
+      "PackagePath": "staticwebassets\\pages\\js\\cookies.ts"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\fourm.js",
+      "PackagePath": "staticwebassets\\pages\\js\\fourm.js"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\fourm.ts",
+      "PackagePath": "staticwebassets\\pages\\js\\fourm.ts"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\login.js",
+      "PackagePath": "staticwebassets\\pages\\js\\login.js"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\login.ts",
+      "PackagePath": "staticwebassets\\pages\\js\\login.ts"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\models\\model-common.js",
+      "PackagePath": "staticwebassets\\pages\\js\\models\\model-common.js"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\models\\model-common.ts",
+      "PackagePath": "staticwebassets\\pages\\js\\models\\model-common.ts"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\models\\requests.js",
+      "PackagePath": "staticwebassets\\pages\\js\\models\\requests.js"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\models\\requests.ts",
+      "PackagePath": "staticwebassets\\pages\\js\\models\\requests.ts"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\models\\responses.js",
+      "PackagePath": "staticwebassets\\pages\\js\\models\\responses.js"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\models\\responses.ts",
+      "PackagePath": "staticwebassets\\pages\\js\\models\\responses.ts"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\post.js",
+      "PackagePath": "staticwebassets\\pages\\js\\post.js"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\post.ts",
+      "PackagePath": "staticwebassets\\pages\\js\\post.ts"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\request.js",
+      "PackagePath": "staticwebassets\\pages\\js\\request.js"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\request.ts",
+      "PackagePath": "staticwebassets\\pages\\js\\request.ts"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\web-api.js",
+      "PackagePath": "staticwebassets\\pages\\js\\web-api.js"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\web-api.ts",
+      "PackagePath": "staticwebassets\\pages\\js\\web-api.ts"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\login.html",
+      "PackagePath": "staticwebassets\\pages\\login.html"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\posts\\post.html",
+      "PackagePath": "staticwebassets\\pages\\posts\\post.html"
+    },
+    {
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\tsconfig.json",
+      "PackagePath": "staticwebassets\\tsconfig.json"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.MHMLW-Backend.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.MHMLW-Backend.props",
+      "PackagePath": "build\\MHMLW-Backend.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.MHMLW-Backend.props",
+      "PackagePath": "buildMultiTargeting\\MHMLW-Backend.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.MHMLW-Backend.props",
+      "PackagePath": "buildTransitive\\MHMLW-Backend.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

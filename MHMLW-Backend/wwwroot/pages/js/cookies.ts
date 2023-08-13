@@ -7,7 +7,7 @@ export let EXPECTED_METHOD: string[] = [];
 
 loadCookies();
 
-function loadCookies() {
+export function loadCookies() {
     AUTH_ID = getCookie("AUTH_ID");
     CUR_USER_ID = getCookie("CUR_USER_ID");
 
@@ -28,14 +28,14 @@ function loadCookies() {
     }
 }
 
-function setCookie(name: string, value: string, days: number) {
+export function setCookie(name: string, value: string, days: number) {
     const expirationDate = new Date();
     expirationDate.setDate(expirationDate.getDate() + days);
     const expires = expirationDate.toUTCString();
     document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/`;
 }
 
-function getCookie(name: string): string | null {
+export function getCookie(name: string): string | null {
     const cookieValue = document.cookie
         .split('; ')
         .find(row => row.startsWith(name))
@@ -43,11 +43,11 @@ function getCookie(name: string): string | null {
     return cookieValue ? decodeURIComponent(cookieValue) : null;
 }
 
-function updateCookie(name: string, newValue: string, days: number) {
+export function updateCookie(name: string, newValue: string, days: number) {
     deleteCookie(name);
     setCookie(name, newValue, days);
 }
 
-function deleteCookie(name: string) {
+export function deleteCookie(name: string) {
     document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
 }

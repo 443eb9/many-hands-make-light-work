@@ -1,3 +1,3 @@
 ﻿namespace MHMLW_Backend.Models.Requests.ThirdParty;
 
-public record SendVerifCodeRequest();
+public record SendVerifCodeRequest(string email);

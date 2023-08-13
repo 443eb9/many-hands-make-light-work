@@ -20,51 +20,58 @@
         <a href="#" class="button">其他</a>
         <a href="#" class="button">其他</a>
     </div>
+    <div class="msg-container">
+    </div>
     <div class="main-container">
         <div class="login-panel panel" style="display: block;">
             <h1 class="title">登录</h1>
             <div class="item">
                 <label for="username">用户名</label>
-                <input type="text" class="username">
+                <input type="text" class="username card">
             </div>
             <div class="item">
                 <label for="password">密码</label>
-                <input type="password" class="password">
+                <input type="password" class="password card">
             </div>
         </div>
-        <div class="regisiter-panel panel" style="display: none;">
+        <div class="register-panel panel" style="display: none;">
             <h1 class="title">注册</h1>
             <div class="item">
                 <label for="username">用户名</label>
-                <input type="text" class="username">
+                <input type="text" class="username card">
             </div>
             <div class="item">
                 <label for="password">密码</label>
-                <input type="password" class="password">
+                <input type="password" class="password card">
             </div>
             <div class="item">
                 <label for="email">邮箱</label>
-                <input type="email" class="email">
+                <input type="email" class="email card">
             </div>
             <div class="item">
                 <label for="verif-code">验证码</label>
-                <input type="text" class="verif-code">
-                <button class="send-verif-code send-verif-code-reg card">发送验证码</button>
+                <input type="text" class="verif-code card">
+                <button class="card send-verif-code send-verif-code-reg card">发送验证码</button>
             </div>
-            <div class="hint">
-                *关于以上个人信息，我们都会采取不可逆的加密方式存储在服务端，请你放心填写
+            <div class="item">
+                <label for="province">省份</label>
+                <select class="province card"></select>
             </div>
         </div>
         <div class="retrieve-panel panel" style="display: none;">
             <h1 class="title">找回</h1>
             <div class="item">
                 <label for="email">邮箱</label>
-                <input type="email" class="email">
+                <input type="email" class="email card">
             </div>
             <div class="item">
                 <label for="verif-code">验证码</label>
-                <input type="text" class="verif-code">
-                <button class="send-verif-code send-verif-code-ret card">发送验证码</button>
+                <input type="text" class="verif-code card">
+                <button class="card send-verif-code send-verif-code-ret card">发送验证码</button>
+            </div>
+            <div class="item">
+                <label for="new-password">新密码</label>
+                <input type="password" class="new-password card">
             </div>
         </div>
         <div class="buttons">
