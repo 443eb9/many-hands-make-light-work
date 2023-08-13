@@ -121,12 +121,12 @@
       "PackagePath": "staticwebassets\\pages\\js\\cookies.ts"
     },
     {
-      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\fourm.js",
-      "PackagePath": "staticwebassets\\pages\\js\\fourm.js"
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\forum.js",
+      "PackagePath": "staticwebassets\\pages\\js\\forum.js"
     },
     {
-      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\fourm.ts",
-      "PackagePath": "staticwebassets\\pages\\js\\fourm.ts"
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\forum.ts",
+      "PackagePath": "staticwebassets\\pages\\js\\forum.ts"
     },
     {
       "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\login.js",
@@ -189,8 +189,8 @@
       "PackagePath": "staticwebassets\\pages\\login.html"
     },
     {
-      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\posts\\post.html",
-      "PackagePath": "staticwebassets\\pages\\posts\\post.html"
+      "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\post.html",
+      "PackagePath": "staticwebassets\\pages\\post.html"
     },
     {
       "Id": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\tsconfig.json",

@@ -2,4 +2,4 @@
 
 namespace MHMLW_Backend.Models.ClientSide;
 
-public record PostPreview(User author, string postTime, string preview);
+public record PostPreview(int postId, User author, string postTime, string preview);

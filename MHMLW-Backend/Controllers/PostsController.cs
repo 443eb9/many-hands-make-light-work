@@ -20,13 +20,13 @@ public class PostsController : ControllerBase
         string? s = AuthManager.CheckUserAuth(HttpContext.Request.Headers);
         if (s != null) return Ok(s);
 
-        PostPreview[]? result = Database.Instance.GetPostPreview(data.offset, data.length);
+        PostPreview[]? result = Database.Instance.GetPostPreview(data.offset, data.length, data.exludedProvinces);
         return result == null
             ? Ok(ResultFactory.CreateFailedResult(new MessageResponse("你已经到世界的尽头了")))
             : Ok(ResultFactory.CreateSuccessResult(new GetPostsPreviewResponse(result)));
     }
 
-    [HttpPost("get/{postId}")]
+    [HttpPost("get/{postId:int}")]
     public IActionResult GetPost(int postId)
     {
         string? s = AuthManager.CheckUserAuth(HttpContext.Request.Headers);

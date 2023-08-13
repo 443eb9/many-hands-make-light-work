@@ -1,3 +1,3 @@
 ﻿namespace MHMLW_Backend.Models.Requests.User;
 
-public record GetUserRequest();
+public record GetUserRequest(int userId);

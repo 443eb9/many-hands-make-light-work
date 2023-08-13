@@ -92,6 +92,7 @@ async function login() {
     if (result.isSuccess) {
         createMessage(response.message, false);
         setCookie("AUTH_ID", response.authInfo.authId, response.authInfo.expireAt);
+        setCookie("CUR_USER_ID", response.authInfo.userId.toString(), 30);
         window.location.pathname = "";
     }
     else {

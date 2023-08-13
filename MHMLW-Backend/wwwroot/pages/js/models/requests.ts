@@ -44,6 +44,14 @@ export class SendVerifCodeRequest {
     }
 }
 
+export class GetUserRequest {
+    userId: number
+
+    constructor(userId: number) {
+        this.userId = userId;
+    }
+}
+
 export class GetPostsPreviewRequest {
     offset: number
     length: number
@@ -55,5 +63,13 @@ export class GetPostsPreviewRequest {
         this.length = 15;
         this.exludedProvinces = exludedProvinces;
         this.expectMethods = expectMethods;
+    }
+}
+
+export class GetPostRequest {
+    postId: number
+
+    constructor(postId: number) {
+        this.postId = postId;
     }
 }

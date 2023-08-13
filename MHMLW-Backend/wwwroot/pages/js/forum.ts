@@ -1,25 +1,47 @@
-import { provinces } from "./constants.js";
-import { CUR_USER_ID, EXPECTED_METHOD, PROVINCE_EXCLUDED } from "./cookies.js";
-import { getPosts, getUser, getUserAvatarUrl } from "./web-api.js"
+import { createMessage, getProvinceOptions } from "./common.js";
+import { provinces, siteBaseUrl } from "./constants.js";
+import { CUR_USER_ID, EXPECTED_METHOD, PROVINCE_EXCLUDED, getCookie, loadCookies, updateCookie } from "./cookies.js";
+import { getPostsPreview, getUser, getUserAvatarUrl } from "./web-api.js"
 
 const postContainer: HTMLElement = document.querySelector(".posts-container");
 const personalInfo: HTMLElement = document.querySelector(".personal-info");
-const provinceSelecter: HTMLElement = document.querySelector("#all-province");
+const provinceSelecter: HTMLSelectElement = document.querySelector("#all-province");
 const excludedProvince: HTMLElement = document.querySelector(".exluded-prov-container")
 const expectedMethods: HTMLInputElement[] = [
     document.querySelector("#phone"),
     document.querySelector("#petition")
 ]
+const addExcludeBtn: HTMLElement = document.querySelector(".filter #exclude-confirm");
+
+let fetchedPosts = 0;
 
 window.onload = () => {
+    registerButtonEvents();
     fetchPosts();
     fetchMyInfo();
-    readAllProvinces();
-    setFilter();
+    initFilter();
+}
+
+function registerButtonEvents() {
+    addExcludeBtn.onclick = onExcludedProvinceAdded;
+
+    for (let i = 0; i < expectedMethods.length; i++) {
+        expectedMethods[i].onchange = () => {
+            if (!EXPECTED_METHOD.includes(i))
+                EXPECTED_METHOD.push(i);
+            else
+                EXPECTED_METHOD.splice(EXPECTED_METHOD.indexOf(i), 1);
+            updateFilter();
+        }
+    }
 }
 
 async function fetchPosts() {
-    let posts: PostPreview[] = await getPosts();
+    let postsProcessResult = await getPostsPreview(fetchedPosts, PROVINCE_EXCLUDED, EXPECTED_METHOD);
+    if (!postsProcessResult.isSuccess)
+        return;
+
+    let posts = postsProcessResult.data.previews;
     for (let i = 0; i < posts.length; ++i) {
         postContainer.insertAdjacentHTML("beforeend", `
         <div class="post">
@@ -32,48 +54,80 @@ async function fetchPosts() {
                     </div>
                 </div>
                 <div class="post-info">
-                    <h3 class="province">`+ posts[i].author.province + `</h3>
+                    <h3 class="province">`+ provinces[posts[i].author.province][0] + `省</h3>
                     <h3 class="post-time">`+ posts[i].postTime + `</h3>
                 </div>
             </div>
             <hr>
-            <a href="#" class="preview">`
+            <a href="`+ siteBaseUrl + `pages/post.html?post_id=` + posts[i].postId + `" class="preview">`
             + posts[i].preview +
             `</a>
         </div>`
         );
     }
+    fetchedPosts += posts.length;
 }
 
 async function fetchMyInfo() {
-    let me: User = await getUser(CUR_USER_ID);
+    let result = await getUser(CUR_USER_ID);
+    if (!result.isSuccess) {
+        // @ts-ignore
+        createMessage(result.data);
+        return;
+    }
+    let me = result.data.user;
     personalInfo.insertAdjacentHTML("beforeend", `
-    <img class="avatar" src="`+ me.id + `.jpg"></img>
+    <img class="avatar" src="`+ getUserAvatarUrl(me.id) + `.jpg"></img>
     <h1 class="username">`+ me.name + `</h1>
     <h2 class="level">Lv. `+ me.level + `</h2>
-    <h3 class="province">`+ me.province + `</h3>
+    <h3 class="province">`+ provinces[me.province][0] + `省</h3>
     `)
 }
 
-function readAllProvinces() {
-    for (let i = 0; i < provinces.length; ++i) {
-        provinceSelecter.insertAdjacentHTML("beforeend", `
-    <option class="`+ provinces[i][1] + `">` + provinces[i][0] + `</option>
-    `);
+function onExcludedProvinceAdded() {
+    let newProvinceId = Number.parseInt(provinceSelecter.value);
+    if (!PROVINCE_EXCLUDED.includes(newProvinceId)) {
+        PROVINCE_EXCLUDED.push(newProvinceId);
+        updateFilter();
     }
 }
 
-async function setFilter() {
+function onExcludedProvinceDeleted(index: number) {
+    PROVINCE_EXCLUDED.splice(index, 1);
+    updateFilter();
+}
+
+async function initFilter() {
+    document.querySelector(".filter #all-province").insertAdjacentHTML("beforeend", getProvinceOptions());
+    readFilterCookies();
+}
+
+function updateFilter() {
+    updateCookie("PROVINCE_EXCLUDED", PROVINCE_EXCLUDED.toString(), 30);
+    updateCookie("EXPECTED_METHOD", EXPECTED_METHOD.toString(), 30);
+    readFilterCookies();
+}
+
+function readFilterCookies() {
+    loadCookies();
+    excludedProvince.innerHTML = ``;
     for (let i = 0; i < PROVINCE_EXCLUDED.length; ++i) {
         excludedProvince.insertAdjacentHTML("beforeend", `
         <div class="exluded-prov card">
-            <h4 class="prov-name">`+ PROVINCE_EXCLUDED[i][0] + `</h4>
-            <button class="cancel"><i>&#xec7b;</i></button>
+            <h4 class="prov-name">${provinces[PROVINCE_EXCLUDED[i]][0]}</h4>
+            <button class="cancel" value="${i}"><i>&#xec7b;</i></button>
         </div>
-        `);
+        `)
     }
 
     for (let i = 0; i < EXPECTED_METHOD.length; ++i) {
-        expectedMethods[Number.parseInt(EXPECTED_METHOD[i])].checked = true;
+        expectedMethods[EXPECTED_METHOD[i]].checked = true;
+    }
+
+    for (let i = 0; i < excludedProvince.children.length; i++) {
+        let deleteBtn = excludedProvince.children[i].lastElementChild as HTMLButtonElement;
+        deleteBtn.onclick = () => {
+            onExcludedProvinceDeleted(Number.parseInt(deleteBtn.value))
+        }
     }
 }

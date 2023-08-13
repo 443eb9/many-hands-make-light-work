@@ -4,6 +4,7 @@ using MHMLW_Backend.Models;
 using MHMLW_Backend.Models.Data;
 using MHMLW_Backend.Models.Requests.User;
 using MHMLW_Backend.Models.Responses;
+using MHMLW_Backend.Models.Responses.Posts;
 using MHMLW_Backend.Models.Responses.User;
 using MHMLW_Backend.Sql;
 using Microsoft.AspNetCore.Mvc;
@@ -14,15 +15,27 @@ namespace MHMLW_Backend.Controllers;
 [Route("api/user")]
 public class UserController : ControllerBase
 {
+    [HttpPost("get")]
+    public IActionResult GetUser([FromBody] GetUserRequest data)
+    {
+        string? s = AuthManager.CheckUserAuth(HttpContext.Request.Headers);
+        if (s != null) return Ok(s);
+
+        User? user = Database.Instance.GetUser(data.userId);
+        return user == null
+            ? Ok(ResultFactory.CreateFailedResult(new MessageResponse($"未获取到id为{data.userId}的用户")))
+            : Ok(ResultFactory.CreateSuccessResult(new GetUserResponse(user)));
+    }
+
     [HttpPost("login")]
     public IActionResult Login([FromBody] LoginRequest data)
     {
-        string? userId = Database.Instance.UserAuth(data.username, data.password);
+        int? userId = Database.Instance.UserAuth(data.username, data.password);
 
-        if (string.IsNullOrEmpty(userId))
+        if (userId == null)
             return Ok(ResultFactory.CreateFailedResult(new LoginResponse("登录失败，请检查你的用户名和密码")));
 
-        User? user = Database.Instance.GetUser(userId);
+        User? user = Database.Instance.GetUser((int)userId);
 
         if (user == null)
             return Ok(ResultFactory.CreateFailedResult(new LoginResponse("出现未知错误，请联系网站管理员，错误代码100")));

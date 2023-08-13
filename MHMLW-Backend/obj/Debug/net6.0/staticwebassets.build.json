@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dnKDPNJcu3NjZmVBBEPcsACwmV6V0rFUI7EXvI4ZVcU=",
+  "Hash": "hHwCPLew4NA8tMECAY1XZyrvhi8gao8cU+MO2cGSh4c=",
   "Source": "MHMLW-Backend",
   "BasePath": "_content/MHMLW-Backend",
   "Mode": "Default",
@@ -527,12 +527,12 @@
       "OriginalItemSpec": "wwwroot\\pages\\js\\cookies.ts"
     },
     {
-      "Identity": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\fourm.js",
+      "Identity": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\forum.js",
       "SourceId": "MHMLW-Backend",
       "SourceType": "Discovered",
       "ContentRoot": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\",
       "BasePath": "_content/MHMLW-Backend",
-      "RelativePath": "pages/js/fourm.js",
+      "RelativePath": "pages/js/forum.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -541,15 +541,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\pages\\js\\fourm.js"
+      "OriginalItemSpec": "wwwroot\\pages\\js\\forum.js"
     },
     {
-      "Identity": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\fourm.ts",
+      "Identity": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\forum.ts",
       "SourceId": "MHMLW-Backend",
       "SourceType": "Discovered",
       "ContentRoot": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\",
       "BasePath": "_content/MHMLW-Backend",
-      "RelativePath": "pages/js/fourm.ts",
+      "RelativePath": "pages/js/forum.ts",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -558,7 +558,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\pages\\js\\fourm.ts"
+      "OriginalItemSpec": "wwwroot\\pages\\js\\forum.ts"
     },
     {
       "Identity": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\js\\login.js",
@@ -816,12 +816,12 @@
       "OriginalItemSpec": "wwwroot\\pages\\login.html"
     },
     {
-      "Identity": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\posts\\post.html",
+      "Identity": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\pages\\post.html",
       "SourceId": "MHMLW-Backend",
       "SourceType": "Discovered",
       "ContentRoot": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\",
       "BasePath": "_content/MHMLW-Backend",
-      "RelativePath": "pages/posts/post.html",
+      "RelativePath": "pages/post.html",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -830,7 +830,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\pages\\posts\\post.html"
+      "OriginalItemSpec": "wwwroot\\pages\\post.html"
     },
     {
       "Identity": "F:\\many-hands-make-light-work\\MHMLW-Backend\\wwwroot\\tsconfig.json",

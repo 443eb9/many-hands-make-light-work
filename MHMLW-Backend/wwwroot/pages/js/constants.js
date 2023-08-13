@@ -34,6 +34,42 @@ export const provinces = [
     ["澳门", "aomen"],
     ["台湾", "taiwan"]
 ];
+export const provinceToId = new Map([
+    ["安徽", 0],
+    ["北京", 1],
+    ["重庆", 2],
+    ["福建", 3],
+    ["甘肃", 4],
+    ["广东", 5],
+    ["广西", 6],
+    ["贵州", 7],
+    ["海南", 8],
+    ["河北", 9],
+    ["河南", 10],
+    ["黑龙江", 11],
+    ["湖北", 12],
+    ["湖南", 13],
+    ["吉林", 14],
+    ["江苏", 15],
+    ["江西", 16],
+    ["辽宁", 17],
+    ["内蒙古", 18],
+    ["宁夏", 19],
+    ["青海", 20],
+    ["山东", 21],
+    ["山西", 22],
+    ["陕西", 23],
+    ["上海", 24],
+    ["四川", 25],
+    ["天津", 26],
+    ["西藏", 27],
+    ["新疆", 28],
+    ["云南", 29],
+    ["浙江", 30],
+    ["香港", 31],
+    ["澳门", 32],
+    ["台湾", 33]
+]);
 export var Api;
 (function (Api) {
     Api[Api["GetNavBar"] = 0] = "GetNavBar";
@@ -71,4 +107,5 @@ export const requestTypeMapper = new Map([
 // export const aesIv = new Uint8Array([2, 51, 32, 47, 10, 52, 33]);
 // export const cryptoKey = await crypto.subtle.importKey('raw', new TextEncoder().encode(aesKey), 'AES-CBC', false, ['encrypt']);
 export const siteAvatarUrl = "https://localhost:44376/assets/images/avatars/";
-export const siteApi = "https://localhost:44376/api/";
+export const siteBaseUrl = "https://localhost:44376/";
+export const siteApi = siteBaseUrl + "api/";

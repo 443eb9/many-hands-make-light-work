@@ -1,15 +1,12 @@
 import { Api, RequestType, siteAvatarUrl } from "./constants.js";
 import { request } from "./request.js";
-import { GetPostsPreviewRequest, LoginRequest, RegisterRequest, RetrieveRequest, SendVerifCodeRequest } from "./models/requests.js";
+import { GetPostRequest, GetPostsPreviewRequest, GetUserRequest, LoginRequest, RegisterRequest, RetrieveRequest, SendVerifCodeRequest } from "./models/requests.js";
 export function getUserAvatarUrl(id) {
     return siteAvatarUrl + id + ".jpg";
 }
 export async function getUser(id) {
-    return await request(Api.User, RequestType.Get, `
-    {
-        "userId":` + id + `
-    }
-    `);
+    const req = new GetUserRequest(id);
+    return await request(Api.User, RequestType.Get, JSON.stringify(req));
 }
 export async function userLogin(username, password) {
     const req = new LoginRequest(username, password);
@@ -28,6 +25,10 @@ export async function getNavBar() {
 }
 export async function getPostsPreview(offset, exludedProvinces, expectMethods) {
     const req = new GetPostsPreviewRequest(offset, exludedProvinces, expectMethods);
+    return await request(Api.Post, RequestType.Get, JSON.stringify(req));
+}
+export async function getPost(postId) {
+    const req = new GetPostRequest(postId);
     return await request(Api.Post, RequestType.Get, JSON.stringify(req));
 }
 export async function sendVerifCode(linkedEmail) {

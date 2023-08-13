@@ -49,7 +49,7 @@ public class Database
         await Task.Delay(TimeSpan.FromHours(2));
     }
 
-    public string? UserAuth(string username, string password)
+    public int? UserAuth(string username, string password)
     {
         MySqlCommand cmd = new("select * from mhmlw.auth where username = @username", Connection);
         cmd.Parameters.AddWithValue("@username", username);
@@ -61,14 +61,14 @@ public class Database
             return null;
         }
 
-        string? result = reader.GetString("password") == password
+        int? result = reader.GetString("password") == password
             ? null
-            : reader.GetString("user_id");
+            : reader.GetInt32("user_id");
         reader.Close();
         return result;
     }
 
-    public User? GetUser(string userId)
+    public User? GetUser(int userId)
     {
         MySqlCommand cmd = new("select * from mhmlw.user where id = @id", Connection);
         cmd.Parameters.AddWithValue("@id", userId);
@@ -149,9 +149,18 @@ public class Database
         }
     }
 
-    public PostPreview[]? GetPostPreview(int offset, int length)
+    public PostPreview[]? GetPostPreview(int offset, int length, int[] excludedProvince)
     {
-        MySqlCommand cmd = new("select * from mhmlw.post order by post_id desc limit @offset, @length", Connection);
+        MySqlCommand cmd;
+
+        if (excludedProvince.Length != 0)
+        {
+            string excl = string.Join(",", excludedProvince);
+            cmd = new($"select * from mhmlw.post where province not in ({excl}) order by post_id desc limit @offset, @length", Connection);
+        }
+        else
+            cmd = new($"select * from mhmlw.post order by post_id desc limit @offset, @length", Connection);
+
         cmd.Parameters.AddWithValue("@offset", offset);
         cmd.Parameters.AddWithValue("@length", length);
         var postReader = cmd.ExecuteReader();
@@ -161,24 +170,17 @@ public class Database
         while (postReader.Read() && result.Count < length)
         {
             int userId = postReader.GetInt32("author_id");
-            MySqlCommand cmdUsr = new($"select * from mhmlw.user where id = {userId}", Connection);
-            var userReader = cmdUsr.ExecuteReader();
-            userReader.Read();
-            User author = new User
-            (
-                -1,
-                userReader.GetString("name"),
-                userReader.GetInt32("level"),
-                userReader.GetInt32("province"),
-                -1,
-                -1
-            );
-            userReader.Close();
+            User? author = GetUser(userId);
+            if (author == null)
+                throw new Exception($"未找到用户：{userId}");
+
+            string content = postReader.GetString("content");
             result.Add(new PostPreview
             (
+                postReader.GetInt32("post_id"),
                 author,
-                postReader.GetDateTime("post_time").AddHours(8).ToString("yyyy MMMM dd HH:mm:ss"),
-                postReader.GetString("content")[..50]
+                postReader.GetDateTime("post_time").AddHours(8).ToString("yyyy/MM/dd HH:mm:ss"),
+                content.Length > 50 ? content[..50] : content
             ));
         }
 
@@ -194,28 +196,34 @@ public class Database
 
         if (!postReader.Read())
             return null;
-        
+
         int userId = postReader.GetInt32("author_id");
-        MySqlCommand cmdUsr = new($"select * from mhmlw.user where id = {userId}", Connection);
-        var userReader = cmdUsr.ExecuteReader();
-        userReader.Read();
-        User author = new User
-        (
-            -1,
-            userReader.GetString("name"),
-            userReader.GetInt32("level"),
-            userReader.GetInt32("province"),
-            -1,
-            -1
-        );
-        userReader.Close();
+        User? author = GetUser(userId);
+        if (author == null)
+            throw new Exception($"未找到用户：{userId}");
+
         Post result = new Post
         (
-            -1,
+            postId,
             author,
-            postReader.GetDateTime("post_time").AddHours(8).ToString("yyyy MMMM dd HH:mm:ss"),
+            postReader.GetDateTime("post_time").AddHours(8).ToString("yyyy/MM/dd HH:mm:ss"),
             postReader.GetString("content"),
-            
+            new InfoTable
+            (
+                postReader.GetString("school_name"),
+                postReader.GetString("address"),
+                postReader.GetString("fee"),
+                postReader.GetString("time")
+            ),
+            new MethodTable
+            (
+                postReader.GetString("organization_name").Split("||"),
+                postReader.GetString("organization_contact").Split("||"),
+                postReader.GetString("organization_working").Split("||")
+            )
         );
+
+        postReader.Close();
+        return result;
     }
 }

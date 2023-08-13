@@ -1,19 +1,16 @@
 import { Api, RequestType, siteAvatarUrl } from "./constants.js";
 import { EXPECTED_METHOD_STR, PROVINCE_EXCLUDED_STR } from "./cookies.js";
 import { request } from "./request.js";
-import { GetPostsPreviewRequest, LoginRequest, RegisterRequest, RetrieveRequest, SendVerifCodeRequest } from "./models/requests.js";
-import { LoginResponse, MessageResponse, ProcessResult } from "./models/responses.js";
+import { GetPostRequest, GetPostsPreviewRequest, GetUserRequest, LoginRequest, RegisterRequest, RetrieveRequest, SendVerifCodeRequest } from "./models/requests.js";
+import { GetPostsPreviewResponse, GetUserResponse, LoginResponse, MessageResponse, ProcessResult } from "./models/responses.js";
 
-export function getUserAvatarUrl(id: string) {
+export function getUserAvatarUrl(id: number) {
     return siteAvatarUrl + id + ".jpg";
 }
 
-export async function getUser(id: string) {
-    return await request(Api.User, RequestType.Get, `
-    {
-        "userId":`+ id + `
-    }
-    `);
+export async function getUser(id: number):Promise<ProcessResult<GetUserResponse>> {
+    const req = new GetUserRequest(id);
+    return await request(Api.User, RequestType.Get, JSON.stringify(req));
 }
 
 export async function userLogin(username: string, password: string): Promise<ProcessResult<LoginResponse>> {
@@ -35,8 +32,13 @@ export async function getNavBar() {
     return await request(Api.GetNavBar, RequestType.Get, "");
 }
 
-export async function getPostsPreview(offset: number, exludedProvinces: number[], expectMethods: number[]) {
+export async function getPostsPreview(offset: number, exludedProvinces: number[], expectMethods: number[]): Promise<ProcessResult<GetPostsPreviewResponse>> {
     const req = new GetPostsPreviewRequest(offset, exludedProvinces, expectMethods);
+    return await request(Api.Post, RequestType.Get, JSON.stringify(req));
+}
+
+export async function getPost(postId: number): Promise<ProcessResult<Post>> {
+    const req = new GetPostRequest(postId);
     return await request(Api.Post, RequestType.Get, JSON.stringify(req));
 }
 
@@ -45,7 +47,7 @@ export async function sendVerifCode(linkedEmail: string): Promise<ProcessResult<
     return await request(Api.ThirdParty, RequestType.VerificationCode, JSON.stringify(req));
 }
 
-export async function sendSolidarity(requesterId: string, receiverId: string) {
+export async function sendSolidarity(requesterId: number, receiverId: number) {
     return await request(Api.RequestSolidarity, RequestType.Send, `
     {
         "requesterId":`+ requesterId + `,

@@ -1,29 +1,31 @@
 export let AUTH_ID: string;
-export let CUR_USER_ID: string;
+export let CUR_USER_ID: number;
 export let PROVINCE_EXCLUDED_STR: string;
-export let PROVINCE_EXCLUDED: string[] = [];
+export let PROVINCE_EXCLUDED: number[] = [];
 export let EXPECTED_METHOD_STR: string;
-export let EXPECTED_METHOD: string[] = [];
+export let EXPECTED_METHOD: number[] = [];
 
 loadCookies();
 
 export function loadCookies() {
     AUTH_ID = getCookie("AUTH_ID");
-    CUR_USER_ID = getCookie("CUR_USER_ID");
+    CUR_USER_ID = Number.parseInt(getCookie("CUR_USER_ID"));
 
-    PROVINCE_EXCLUDED_STR = getCookie("PROVINCE_EXLUDED");
+    PROVINCE_EXCLUDED = [];
+    PROVINCE_EXCLUDED_STR = getCookie("PROVINCE_EXCLUDED");
     if (PROVINCE_EXCLUDED_STR != null) {
-        let provs = PROVINCE_EXCLUDED_STR.split(',');
+        let provs = PROVINCE_EXCLUDED_STR.split(",");
         for (let i = 0; i < provs.length; ++i) {
-            PROVINCE_EXCLUDED.push(provs[i]);
+            PROVINCE_EXCLUDED.push(Number.parseInt(provs[i]));
         }
     }
 
-    EXPECTED_METHOD_STR = getCookie("EXPECTED_METHOD_STR");
+    EXPECTED_METHOD = [];
+    EXPECTED_METHOD_STR = getCookie("EXPECTED_METHOD");
     if (EXPECTED_METHOD_STR != null) {
-        let methods = EXPECTED_METHOD_STR.split(',')
+        let methods = EXPECTED_METHOD_STR.split(",");
         for (let i = 0; i < methods.length; ++i) {
-            EXPECTED_METHOD.push(methods[i]);
+            EXPECTED_METHOD.push(Number.parseInt(methods[i]));
         }
     }
 }

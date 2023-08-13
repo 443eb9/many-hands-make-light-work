@@ -1,11 +1,12 @@
 interface PostPreview {
+    postId: number
     author: User
     postTime: string,
     preview: string
 }
 
 interface User {
-    id: string
+    id: number
     name: string
     level: number
     province: number

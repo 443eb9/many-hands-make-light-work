@@ -1,15 +1,10 @@
 import { provinces } from "./constants";
 import { CUR_USER_ID } from "./cookies";
-import { getUser, getUserAvatarUrl, sendSolidarity } from "./web-api";
+import { getUserAvatarUrl, sendSolidarity } from "./web-api";
 let postAuthor;
 let detailedPost;
 async function fetchAuthorInfo() {
     let path = window.location.pathname.split('/');
-    // url looks like:
-    // xxx.com/xxx/xxx/posts/123-456.html
-    // 123: user id
-    // 456: post id
-    postAuthor = await getUser(path[path.length - 1].split('.')[0].split('-')[0]);
     document.querySelector(".personal-info").insertAdjacentHTML("beforeend", `
     <h1 class="title">求助人</h1>
     <img class="avatar" src="` + getUserAvatarUrl(postAuthor.id) + `"></img>
